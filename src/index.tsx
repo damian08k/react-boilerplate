@@ -1,10 +1,13 @@
-import { FC } from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
-const App: FC = () => {
-    return <div>Hello World!</div>;
-};
+import App from './App';
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App />, root);
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  root,
+);

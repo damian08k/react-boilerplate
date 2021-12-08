@@ -83,9 +83,13 @@ export default {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.ts',
     '\\.(css|less)$': '<rootDir>/__mocks__/fileMock.ts',
+    '\\.svg': '<rootDir>/__mocks__/svgrMock.ts',
+    // if you add aliases in webpack and tsconfig.json there is necessary to add
+    // aliases inside jest.config.ts too. Example:
+    //'^view/(.*)': '<rootDir>/src/components/view/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

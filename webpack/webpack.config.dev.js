@@ -1,5 +1,6 @@
-/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+const path = require('path');
 
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { merge } = require('webpack-merge');
@@ -10,6 +11,11 @@ module.exports = merge(commonConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   resolve: {
+    alias: {
+      // Here you should add some aliases for importing files from folders
+      // example:
+      // assets: path.resolve(__dirname, '../src/assets'),
+    },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   devServer: {
